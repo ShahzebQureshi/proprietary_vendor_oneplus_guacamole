@@ -160,6 +160,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/guacamole/proprietary/odm/lib64/camera/com.qti.tuned.semco_imx481.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.semco_imx481.bin \
     vendor/oneplus/guacamole/proprietary/odm/lib64/camera/com.qti.tuned.semco_imx586.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.semco_imx586.bin \
     vendor/oneplus/guacamole/proprietary/odm/lib64/camera/com.qti.tuned.semco_s5k3m5.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.semco_s5k3m5.bin \
+    vendor/oneplus/guacamoleb/proprietary/odm/lib64/goldResult.bin:$(TARGET_COPY_OUT_ODM)/lib64/goldResult.bin \
     vendor/oneplus/guacamole/proprietary/odm/lib64/camera/com.qti.tuned.sunny_imx471.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.sunny_imx471.bin \
     vendor/oneplus/guacamole/proprietary/odm/vendor/firmware/gfp9508.b00:$(TARGET_COPY_OUT_ODM)/vendor/firmware/gfp9508.b00 \
     vendor/oneplus/guacamole/proprietary/odm/vendor/firmware/gfp9508.b01:$(TARGET_COPY_OUT_ODM)/vendor/firmware/gfp9508.b01 \
@@ -531,6 +532,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     audio.primary.msmnile_odm \
+    camera.qcom \
+    com.qti.chi.override \
     com.qti.sensor.imx471 \
     com.qti.sensor.imx481 \
     com.qti.sensor.imx586 \
