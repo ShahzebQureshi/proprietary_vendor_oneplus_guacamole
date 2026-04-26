@@ -5,8 +5,17 @@
 soong_namespace {
     imports: [
         "vendor/oneplus/sm8150-common",
+        "device/oneplus/sm8150-common",
+        "hardware/oplus",
+        "hardware/qcom-caf/sm8150",
+        "hardware/qcom-caf/wlan",
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "vendor/qcom/opensource/commonsys/display",
+        "vendor/qcom/opensource/dataservices",
+        "vendor/qcom/opensource/display",
     ],
 }
+
 
 cc_prebuilt_library_shared {
     name: "audio.primary.msmnile_odm",
@@ -111,7 +120,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.qti.sensor.imx586",
+    name: "camera.qcom",
     owner: "oneplus",
     strip: {
         none: true,
@@ -119,27 +128,46 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/lib64/camera/com.qti.sensor.imx586.so",
+                "proprietary/vendor/lib64/hw/camera.qcom.so",
             ],
             shared_libs: [
                 "libc++",
                 "libcutils",
                 "liblog",
                 "libutilscallstack",
+                "libcdsprpc",
+                "libqdMetaData",
+                "libsnsapi",
+                "libqmi_common_so",
+                "libqmi_cci",
+                "libqmi_encdec",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
+                "libhardware",
+                "vendor.oplus.hardware.cameraMDM@2.0",
+                "libbinder",
+                "libhidlbase",
+                "libhidltransport",
+                "libutils",
+                "libcamera_metadata",
+                "libcamxfdengine",
+                "libcamxstatscore",
+                "libsync",
+                "libopcamera_native_modules",
+                "libz",
+                "libdl",
                 "libc",
                 "libm",
-                "libdl",
             ],
         },
     },
     compile_multilib: "64",
-    relative_install_path: "camera",
+    relative_install_path: "hw",
     prefer: true,
-    device_specific: true,
+    soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
-    name: "com.qti.sensor.s5k3m5",
+    name: "com.qti.chi.override",
     owner: "oneplus",
     strip: {
         none: true,
@@ -147,13 +175,24 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/lib64/camera/com.qti.sensor.s5k3m5.so",
+                "proprietary/vendor/lib64/hw/com.qti.chi.override.so",
             ],
             shared_libs: [
                 "libc++",
                 "libcutils",
                 "liblog",
                 "libutilscallstack",
+                "libbinder",
+                "libhidlbase",
+                "libhidltransport",
+                "libutils",
+                "vendor.oplus.hardware.cameraMDM@2.0",
+                "libcamera_metadata",
+                "libhardware",
+                "libqdMetaData",
+                "libsync",
+                "vendor.qti.hardware.vpp@1.1",
+                "vendor.qti.hardware.vpp@1.2",
                 "libc",
                 "libm",
                 "libdl",
@@ -161,7 +200,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    relative_install_path: "camera",
+    relative_install_path: "hw",
     prefer: true,
-    device_specific: true,
+    soc_specific: true,
 }
